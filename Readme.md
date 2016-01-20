@@ -1,6 +1,7 @@
 # Учебный проект «Барбершоп»
 
 * Студент: [Вадим Герин](https://htmlacademy.ru/profile/id94919).
+* Наставник: [Илья Сачев] (https://htmlacademy.ru/profile/id11939).
 
 ---
 
