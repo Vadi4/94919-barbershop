@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta charset="utf-8">
 		<title>Барбершоп «Бородинский»</title>
+		<link href="css/normalize.css" type="text/css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
 		<header class="main-header">
 			<div class="container">
-				<!-- 
-					Зачем тебе div header-logo?
-					Можно же назначить этот класс непосредственно на ссылку, так ты избавишься от лишнего элемента
-				 -->
-				<div class="header-logo">
-					<a href="#">
-						<img src="img/logo_nav.png" alt="barbershop">
-					</a>
-				</div>
-				<!-- 
-					Название класса main-navigation или main-nav было бы гораздо лучше чем navigator
-				 -->
-				<nav class="main-navigator">
+				<a class="header-logo" href="#">
+					<img src="img/logo_nav.png" alt="barbershop">
+				</a>
+				<nav class="main-nav">
 					<ul>
 						<li>
 							<a href="#">Информация</a>
@@ -44,41 +37,10 @@
 				</div>
 			</div>
 		</header>
-		<!-- 
-			Ты добавляешь к main класс container но это неправильно
-			У тебя container используется как центровщик, но обрати внимание на макет, контентная часть тоже имеет свой фон и он должен тянуться так же как и в header
-			Поэтому и с аналогией header контентная часть должна выглядеть вот так
-
-			<main class="main-content">
-				<div class="container"></div>
-			</main>
-		-->
-		<main class="container">
-			<!--
-				Чтобы стили заголовков можно было легко переиспользовать
-				Можно (и лучше) привести все к одним классам
-
-				barbershop-title-h1
-				barbershop-title-h2 и так далее
-
-				Можно 
-				b-title1, b-title-h2 
-
-				Или любое другое. Кто-то дает префиксы размера как принято в одежде, типа xs, s, m, l, xl, xxl 
-
-				В итоге, заголовок выше будет выглядеть как-то так (или любой другой класс, главное чтобы прослеживалась какая-то логика)
-
-				<h1 class="b-title-h1">Прайс-лист</h1>
-
-				Это поможет нам использовать разные теги, но одно и тоже оформление
-			-->
-			<h1>Набор для путешествий «BAXTER OF CALIFORNIA»</h1>
-			<!-- 
-				Опять же зачем тут лишний div? Можно просто оставить ul и задать ему класс breadcrumbs
-				Обычно в блоке с хлебными крошками ничего кроме них больше нет, поэтому div не обязателен
-			 -->
-			<div class="breadcrumbs">
-				<ul class="breadcrumbs-list">
+		<main class="main-content">
+			<div class="container">
+				<h1 class="b-title-h1">Набор для путешествий «BAXTER OF CALIFORNIA»</h1>
+				<ul class="breadcrumbs-list breadcrumbs">
 					<li>
 						<a href="#">Главная</a>
 					</li>
@@ -92,91 +54,60 @@
 						<a href="#">Набор для путешествий «BAXTER OF CALIFORNIA»</a>
 					</li>
 				</ul>	
-			</div>
-
-			<!-- 
-		        С разметкой что ниже невозможно будет сделать сетку
-		        Смотри, у нас по идее две колонки
-		        1. Галерея
-		        2. Описание товара
-
-		        Обычно большие колонки делают на float. В сетках (чуть позже) будет понятнее о чем я говорю, но когда несколько колонок имеют float, этот float нужно очищать
-		        Часто это делают таким образом что колонки оборачивают в один блок
-
-		        Поэтому, разметка ниже должна выглядеть вот таким образом
-
-		        <div class="product"> - это общий блок для колонок
-					<div class="product-gallery"> - это блок для фотогалереи
-
+				<div class="product">
+					<div class="product-gallery">
+						<div class="item-gallery-picture">
+							<img src="img/item_set_travelling-BOC.jpg" width="460" height="498" alt="набор для путешествий «Baxter of California»">
+						</div>
+						<a href src="#" class="item-gallery-preview" target="_blank">
+							<img src="img/item_set_travelling-BOC_small-1.jpg" width="140" height="149" alt="набор для путешествий «Baxter of California»">
+						</a>
+						<a href src="#" class="item-gallery-preview" target="_blank">
+							<img src="img/item_set_travelling-BOC_small-2.jpg" width="140" height="149" alt="набор для путешествий «Baxter of California»">
+						</a>
+						<a href src="#" class="item-gallery-preview" target="_blank">
+							<img src="img/item_set_travelling-BOC_small-3.jpg" width="140" height="149" alt="" class="second-img">
+						</a>
 					</div>
-					<div class="product-description"> - это блок для описания товара, внутри не должно быть дополнительных каких-то оберток и всего
-
-					</div>
-		        </div>
-		    -->
-
-			<div class="gallery-product">
-				<!-- 
-					Тут разметка недостаточна для того, чтобы сделать ее рабочей в будущем
-
-					Логика тут такая
-					1. У нас есть большое изображение
-					2. У нас есть список превью
-					3. Фунционально по клику на превью, в блоке с большим изображением должна заменяться картинка
-
-					Чтобы совместить все что выше, подойдет такая разметка
-					<div class="item-gallery-picture">
-					<img src="" alt="набор для путешествий «Baxter of California»" width="480" height="498">    
-					</div>
-					<a href="#тут_должна_быть_ссылка_на_большую_картинку" class="item-gallery-preview" target="_blank">
-					<img src="тут_должен_быть_путь_до_малой_картинки" alt="набор для путешествий «Baxter of California»" width="140" height="149">
-					</a>
-
-					Зачем нам ссылка на большую? Чтобы было просто получать ее путь и заменять картинку на JS
-					Зачем нам аттрибут target="_blank" - Затем, если отключен JS у пользователя, то посмотреть большое изображение он сможет все равно. А если JS есть, то мы сможем перехватить это поведение пользователя и не открывать новую вкладку
-				-->
-				<img src="img/item_set_travelling-BOC.jpg" width="460" height="498" alt="Набор для путешествий" class="main-img">
-				<img src="img/item_set_travelling-BOC_small-1.jpg" width="140" height="149" alt="" class="second-img">
-				<img src="img/item_set_travelling-BOC_small-2.jpg" width="140" height="149" alt="" class="second-img">
-				<img src="img/item_set_travelling-BOC_small-3.jpg" width="140" height="149" alt="" class="second-img">
-			</div>
-
-			<!-- 
-				Блоки existence и vendor-code нужно дополнительно обернуть в div
-				Будет проще потом сделать сетку
-			 -->
-
-			<span class="existence">Есть в наличии</span>
-			<span class="vendor-code">Артикул: dexter-ae</span>
-			<p>Travel-kit - необходимый аксессуар во время любого<br>
-			путешествия. В аккуратной кожаной сумке находится все, что<br>
-			нужно для бритья и ухода за кожей во время рабочей поездки<br>
-			или отдыха: средство для умывания, увлажняющий крем, крем<br>
-			для бритья, крем после бритья, шампунь. Набор также може<br>
-			стать отличным подарком.
-			</p>
-			<div class="price-and-buy">
-					<span class="price">2900 РУБ.</span>
-					<a class="button" href="#">Купить</a>
-			</div>
-			<h2>В набор входят:</h2>
-			<ul class="equpment-of-product">
-				<li>
-					Средство для умывания (50мл)
-				</li>
-				<li>
-					Увлажняющий крем (50мл)
-				</li>
-				<li>
-					Крем для бритья (50мл)
-				</li>
-				<li>
-					Крем после бритья, шампунь (50мл)
-				</li>
-				<li>
-					Удобна кожанная косметичка (50мл)
-				</li>
-			</ul>
+					<div class="product-description">
+						<div class="existence">
+							<span class="caption-existence">Есть в наличии</span>
+						</div>
+						<div class="vendor-code">
+							<span class="caption-vendor-code">Артикул: dexter-ae</span>
+						</div>	
+						<p>Travel-kit - необходимый аксессуар во время любого<br>
+						путешествия. В аккуратной кожаной сумке находится все, что<br>
+						нужно для бритья и ухода за кожей во время рабочей поездки<br>
+						или отдыха: средство для умывания, увлажняющий крем, крем<br>
+						для бритья, крем после бритья, шампунь. Набор также может<br>
+						стать отличным подарком.
+						</p>
+						<div class="price-and-buy">
+								<span class="price">2900 РУБ.</span>
+								<a class="button" href="#">Купить</a>
+						</div>
+						<h2 class="b-title-h2">В набор входят:</h2>
+						<ul class="equpment-of-product">
+							<li>
+								Средство для умывания (50мл)
+							</li>
+							<li>
+								Увлажняющий крем (50мл)
+							</li>
+							<li>
+								Крем для бритья (50мл)
+							</li>
+							<li>
+								Крем после бритья, шампунь (50мл)
+							</li>
+							<li>
+								Удобна кожанная косметичка (50мл)
+							</li>
+						</ul>
+					</div>	
+				</div>
+			</div>	
 		</main>
 		<footer class="main-footer">
 			<div class="container">
@@ -194,7 +125,7 @@
 				</div>
 				<div class="footer-copyright">
 					<p>Разработано:</p>
-					<a class="btn" href="https://htmlacademy.ru">HTML Academy</a>
+					<a class="button" href="https://htmlacademy.ru">HTML Academy</a>
 				</div>
 			</div>
 		</footer>

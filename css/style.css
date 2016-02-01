@@ -1,34 +1,21 @@
-/*
-    Давай придерживаться стиля написания css как было в моем примере
-    https://dl.dropboxusercontent.com/u/5699542/htmlacademy_default_project.zip - вот тут для вас собрал распространенные ошибки по CSS и описал как лучше всего писать стили правильно, красиво и аккуратно
-*/
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
 
 body {
-	font-size:14px;
-	line-height:24px;
-	color:#000000;
-    /* 
-        Нужно указывать семейство шрифта, а еще и шрифт-замену 
-        То есть, вот скажем, у нас шрифт PT Sans Narrow
-
-        Во-первых, шрифт состоит из нескольких слов, а это значит что его название лучше указывать в кавычках - "PT Sans Narrow"
-        Во-вторых, видим что шрифт без засечек, а это значит, что его семейство - sans-serif;
-        В-третьих, пока шрифт не подключен, мы бы хотели чтобы использовался максимально доступный шрифт без засечек - Arial
-
-        Итого, после всех правок, должно быть
-
-        font-family: "PT Sans Narrow", Arial, sans-serif;
-    */
-
-
-	font-family:PT Sans Narrow; 
-	font-weight:bold;
+	font-size: 14px;
+	line-height: 24px;
+	color: #000000;
+	font-family: "PT Sans Narrow", Arial, sans-serif; 
+	font-weight: bold;
 }
 
 h1 {
-	font-size:30px;
+	font-size: 30px;
 }
 
 h2 {
-	fonst-size:24px;
+	font-size: 24px;
 }

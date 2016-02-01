@@ -1,30 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta charset="utf-8">
 		<title>Барбершоп «Бородинский»</title>
+		<link href="css/normalize.css" type="text/css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
-
-		<!-- 
-			Обрати внимание на замечания в barberhop-item.html
-			Многие вещи тут повторяются
-				1. Нужно настроить редактор на правильные отступы
-				2. header-logo заменить на ссылку
-				3. Убрать лишний div в breadcrumbs
-				4. Общие классы для заголовков
-				5. Задать для main другой класс + добавить внутри container
-		 -->
-
 	</head>
 	<body>
 		<header class="main-header">
 			<div class="container">
-				<div class="header-logo">
-					<a href="#">
-						<img src="img/logo_nav.png" alt="barbershop" >
-					</a>
-				</div>
-				<nav class="main-navigator">
+				<a href="#" class="header-logo">
+					<img src="img/logo_nav.png" alt="barbershop" >
+				</a>
+				<nav class="main-nav">
 					<ul>
 						<li>
 							<a href="#">Информация</a>
@@ -48,9 +37,9 @@
 				</div>
 			</div>
 		</header>
-		<main class="container">
-			<h1>Средства для ухода</h1>
-			<div class="breadcrumbs">
+		<main class="main-content">
+			<div class="container">
+				<h1 class="b-title-h1">Средства для ухода</h1>
 				<ul class="breadcrumbs-list">
 					<li>
 						<a href="#">Главная</a>
@@ -62,221 +51,156 @@
 						<a href="#">Средства для ухода</a>
 					</li>
 				</ul>	
-			</div>
-
-			<!-- 
-				Опять же ниже ошибка, которая не позволит позднее сделать легко и просто сетку
-
-				Если посмотреть на макет, то можно видеть 2 большие колонки
-				Слева - колонка с фильтрами
-				Справа - колонка с товарами + пагинацией
-
-				Колонку с фильтрами лучше оформить как div (или aside), а внутри уже форму
-				Это необходимо для того, чтобы была возможность легко добавить какой-то контент в эту колонку (например, баннеры)
-
-				Форма должна быть одна. Это сортировка общая
-				Кнопка показать должна отправлять форму, соответственно должна быть оформлена в виде input type=submit
-				
-			 -->
-
-			<form action="#" method="post" class="firm">
-				<!-- 
-					Посмотри, что я писал про общие классы для заголовков
-					Тут это тоже можно применить
-				-->
-				<h2>Производители:</h2>
-
-				 <!--
-		            То что ты использовал форму это отлично и правильно
-		            Все checbox, radio оформлены верно
-		            Но ты не пердусматриваешь никакую разметку, чтобы тебе потом было проще
-
-		            Смотри, нам нужно чтобы между Baxter of California и Mr Natty снизу был определенный раздел
-		            Между блоками производители и группы товаров тоже
-
-		            Если посмотреть на форму, то можно увидеть что у нас
-		            Блок производители
-		                Заголовок
-		                Список производителей
-
-		            Таким образом уже появляется доп разметка, которую легко стилизовать
-
-		            <div class="filters-group">
-		                <h2 class="описал как назвать классы для заголовков в item.html">Производители</h2>
-		                <ul class="filters-list">
-		                    <li>
-		                        смотри замечания по контролам ниже
-		                    </li>
-		                </ul>
-		            </div>
-
-		            PS. Список использовать не обязательно, просто я лично всегда использую его для разметки такого типа и это помогает и упрощает контролировать отступы
-
-		            Теперь по поводу чекбоксов и радио-кнопок
-		            Смотри, они у нас нестандартные, в связи с этим нужно использовать "особую разметку"
-		            
-		            label что ты использовал, можно использовать 2-мя способами
-		            Ты все сделал правильно, но для более простой стилизации лучше использовать вариант 2
-
-		            1. 
-		                <label>
-		                    <input type="radio" value="baxter of california">
-		                    Baxter of california
-		                </label>
-		            2.
-		                <input id="manufacturer-1" type="radio" value="baxter of california">
-		                <label for="manufacturer-1">Baxter of california</label>
-		    
-		            Плюс label в том, что если ты правильно указываешь в for id элемента (вообще аттрибут for, при использовании лейбла отдельно обязателен)
-		            во всех браузерах происходит клик по элементу с id
-		            Возможно, я чуть путанно написал, но суть такая
-		             - Есть input с id="manufacturer-1"
-		             - Если label с аттрибутом for="manufacturer-1"
-		             - По клику на label, браузер ищет input с id = аттрибуту for этого label. То есть в нашем примере браузер ищет id="manufacturer-1"
-		             - Если браузер его находит, то он сам ставит фокус на найденный элемент (в случае с элементами формы = клику по ним)
-
-		            Поэтому, для оформления кастомных чекбоксов и радио кнопок это идеальный способ
-		            Мы сможем обойтись без JavaScript и сделать работу чекбоксов только на CSS (В CSS есть псевдокласс :checked)
-		            
-
-		            В итоге, нужно объединить 2 разметки что выше и доделать форму по аналогии
-		        -->
-
-					<label><input type="checkbox">Baxter of california</label>
-					<label><input type="checkbox">Mr natty</label>
-					<label><input type="checkbox">Suavecito</label>
-					<label><input type="checkbox">Malin+Goetz</label>
-					<label><input type="checkbox">Murray`s</label>
-					<label><input type="checkbox">American crew</label>
-			</form>
-			<form action="#" method="post" class="groups">
-				<h2>Группы товаров:</h2>
-					<label><input type="radio" name="groups-of-products">Бритвенные принадлежности</label>
-					<label><input type="radio" name="groups-of-products">Средства для ухода</label>
-					<label><input type="radio" name="groups-of-products">Аксессуары</label>
-				<a href="#" class="button">Показать</a>
-			</div>
-			
-			<!-- 
-				Уже писал выше, но напомню: тут должен быть div, в котором будут все article
-			 -->
-
-			<article> <!-- Нужно задать класс для блока -->
-
-				<figure>
-					<!-- 
-						Figure немного спорное решение тут, но в целом все неплохо 
-
-						Лично я бы так не заморачивался и сделал бы разметку картинка + название товара без figure и figcaption
-						Оставил бы просто <img> а figcaption сделал бы ссылкой (потому что всегда заголовок = ссылка на товар)
-
-						Но твой вариант тоже допустим, можно не менять
-						Выше комментарий просто для информации
-
-						Обрати внимание, что "Набор для путешествий" и «BAXTER OF CALIFORNIA» написаны разный размером шрифта, чтобы проще это контролировать было бы неплохо обернуть каждую из надписей в span с разными классами
-
-					-->
-					<img src="img/set_travelling-BOC.jpg" width="220" height="165" alt="">
-					<figcaption>
-					Набор для путешествий<br>
-					<!-- 
-						Небольшое замечание по поводу «
-
-						Этот символ является utf-8 символом и при смене кодировки страницы (utf-8 сейчас непризнанный стандарт, но все-таки быавют случаи когда сайт работает в другой кодировке)
-						возникнут проблемы
-
-						Поэтому, лучше вместо явного символа использовать ему замену через HTML-мнемоники
-						https://ru.wikipedia.org/wiki/%D0%9C%D0%BD%D0%B5%D0%BC%D0%BE%D0%BD%D0%B8%D0%BA%D0%B8_%D0%B2_HTML
-
-						То есть, лучше написать вот так
-						&laquo;Baxter of California&raquo;
-
-						Плюс старайся писать все тексты в нормальном регистре. Сделать капсом можно и с помощью CSS
-					 -->
-					«BAXTER OF CALIFORNIA»
-					</figcaption>
-				</figure>
-				<div class="price-and-buy">
-					<span class="price">2900 РУБ.</span>
-					<a class="button" href="#">Купить</a>
+				<aside>
+					<form action="#" method="post" class="firm">
+						<div class="filters-manufacturer">
+							<h2 class="b-title-h2">Производители:</h2>
+							<ul class="filters-list">
+								<li>
+									<input id="manufacturer-1" type="checkbox" value="baxter of california" checked>
+									<label for="manufacturer-1">Baxter of california</label>
+								</li>
+								<li>
+									<input id="manufacturer-2" type="checkbox" value="Mr natty">
+									<label for="manufacturer-2">Mr natty</label>
+								</li>
+								<li>
+									<input id="manufacturer-3" type="checkbox" value="Suavecito" checked>
+									<label for="manufacturer-3">Suavecito</label>
+								</li>
+								<li>
+									<input id="manufacturer-4" type="checkbox" value="Malin+Goetz">
+									<label for="manufacturer-4">Malin+Goetz</label>
+								</li>
+								<li>
+									<input id="manufacturer-5" type="checkbox" value="Murray`s">
+									<label for="manufacturer-5">Murray`s</label>
+								</li>
+								<li>
+									<input id="manufacturer-6" type="checkbox" value="American crew" checked>
+									<label for="manufacturer-6">American crew</label>
+								</li>
+							</ul>
+						</div>	
+						<div class="filters-groups">
+							<h2 class="b-title-h2">Группы товаров:</h2>
+								<ul class="filters-list">
+									<li>
+										<input type="radio" name="groups-of-products" id="shower-accessories">
+										<label for="shower-accessories">Бритвенные принадлежности</label>
+									</li>
+									<li>
+										<input type="radio" name="groups-of-products" id="preparations-for-care" checked>
+										<label for="preparations-for-care">Средства для ухода</label>
+									</li>
+									<li>
+										<input type="radio" name="groups-of-products" id="accessories">
+										<label for="accessories">Аксессуары</label>
+									</li>
+								</ul>
+							<input type="submit" class="button" value="Показать">
+						</div>
+					</form>	
+				</aside>
+				<div class="selected-products">
+					<article class="container-selected-product">
+						<figure>
+							<img src="img/set_travelling-BOC.jpg" width="220" height="165" alt="">
+							<a href="#">
+								<figcaption>
+								<span class="caption-groups-of-products">Набор для путешествий</span><br>
+								<span class="caption-manufacturer">&laquo;Baxter of California&raquo;</span>
+								</figcaption>
+							</a>
+						</figure>
+						<div class="price-and-buy">
+							<span class="price">2900 РУБ.</span>
+							<a class="button" href="#">Купить</a>
+						</div>
+					</article>
+					<article class="container-selected-product">
+						<figure>
+							<img src="img/conditioner_BOC.jpg" width="220" height="165" alt="">
+							<a href="#">
+								<figcaption>
+								<span class="caption-groups-of-products">Увлажняющий кондиционер</span><br>
+								<span class="caption-manufacturer">&laquo;Baxter of California&raquo;</span>
+								</figcaption>
+							</a>	
+						</figure>
+						<div class="price-and-buy">
+							<span class="price">750 РУБ.</span>
+							<a class="button" href="#">Купить</a>
+						</div>
+					</article>
+					<article class="container-selected-product">
+						<figure>
+							<img src="img/gel_for_hair-SUAV.jpg" width="220" height="165" alt="">
+							<a href="#">
+								<figcaption>
+								<span class="caption-groups-of-products">Гель для волос</span><br>
+								<span class="caption-manufacturer">&laquo;sauvecito&raquo;</span>
+								</figcaption>
+							</a>	
+						</figure>
+						<div class="price-and-buy">
+							<span class="price">290 РУБ.</span>
+							<a class="button" href="#">Купить</a>
+						</div>
+					</article>
+					<article class="container-selected-product">
+						<figure>
+							<img src="img/clay_for_hair-AC.jpg" width="220" height="165" alt="">
+							<a href="#">
+								<figcaption>
+								<span class="caption-groups-of-products">Глина для укладки волос</span><br>
+								<span class="caption-manufacturer">&laquo;american crew&raquo;</span>
+								</figcaption>
+							</a>
+						</figure>
+						<div class="price-and-buy">
+							<span class="price">590 РУБ.</span>
+							<a class="button" href="#">Купить</a>
+						</div>
+					</article>
+					<article class="container-selected-product">
+						<figure>
+							<img src="img/gel_for_hair-AC.jpg" width="220" height="165" alt="">
+							<a href="#">
+								<figcaption>
+								<span class="caption-groups-of-products">Гель для волос</span><br>
+								<span class="caption-manufacturer">&laquo;american crew&raquo;</span>
+								</figcaption>
+							</a>
+						</figure>
+						<div class="price-and-buy">
+							<span class="price">300 РУБ.</span>
+							<a class="button" href="#">Купить</a>
+						</div>
+					</article>
+					<article class="container-selected-product">
+						<figure>
+							<img src="img/set_for_shaving-BOC.jpg" width="220" height="165" alt="">
+							<a href="#">
+								<figcaption>
+								<span class="caption-groups-of-products">Набор для бритья</span><br>
+								<span class="caption-manufacturer">&laquo;Baxter of California&raquo;</span>
+								</figcaption>
+							</a>
+						</figure>
+						<div class="price-and-buy">
+							<span class="price">3900 РУБ.</span>
+							<a class="button" href="#">Купить</a>
+						</div>
+					</article>
+					<div class="pagination">
+						<a class="select-page" href="#">1</a>
+						<a class="select-page" href="#">2</a>
+						<a class="select-page" href="#">3</a>
+						<a class="select-page" href="#">4</a>
+					</div>	
 				</div>
-			</article>
-			<article>
-				<figure>
-					<img src="img/conditioner_BOC.jpg" width="220" height="165" alt="">
-					<figcaption>
-					Увлажняющий кондиционер<br>
-					«BAXTER OF CALIFORNIA»
-					</figcaption>
-				</figure>
-				<div class="price-and-buy">
-					<span class="price">750 РУБ.</span>
-					<a class="button" href="#">Купить</a>
-				</div>
-			</article>
-			<article>
-				<figure>
-					<img src="img/gel_for_hair-SUAV.jpg" width="220" height="165" alt="">
-					<figcaption>
-					Гель для волос<br>
-					«SAUVECITO»
-					</figcaption>
-				</figure>
-				<div class="price-and-buy">
-					<span class="price">290 РУБ.</span>
-					<a class="button" href="#">Купить</a>
-				</div>
-			</article>
-			<article>
-				<figure>
-					<img src="img/clay_for_hair-AC.jpg" width="220" height="165" alt="">
-					<figcaption>
-					Глина для укладки волос<br>
-					«AMERICAN CREW»
-					</figcaption>
-				</figure>
-				<div class="price-and-buy">
-					<span class="price">590 РУБ.</span>
-					<a class="button" href="#">Купить</a>
-				</div>
-			</article>
-			<article>
-				<figure>
-					<img src="img/gel_for_hair-AC.jpg" width="220" height="165" alt="">
-					<figcaption>
-					Гель для волос<br>
-					«AMERICAN CREW»
-					</figcaption>
-				</figure>
-				<div class="price-and-buy">
-					<span class="price">300 РУБ.</span>
-					<a class="button" href="#">Купить</a>
-				</div>
-			</article>
-			<article>
-				<figure>
-					<img src="img/set_for_shaving-BOC.jpg" width="220" height="165" alt="">
-					<figcaption>
-					Набор для бритья<br>
-					«BAXTER OF CALIFORNIA»
-					</figcaption>
-				</figure>
-				<div class="price-and-buy">
-					<span class="price">3900 РУБ.</span>
-					<a class="button" href="#">Купить</a>
-				</div>
-			</article>
-
-			<!-- 
-				Лучше добавить общий блок, где будут все эти ссылки
-				Например, 
-				<div class="pagination">
-			 -->
-
-			<a class="select-pages" href="#">1</a>
-			<a class="select-pages" href="#">2</a>
-			<a class="select-pages" href="#">3</a>
-			<a class="select-pages" href="#">4</a>
+			</div>	
 		</main>
 		<footer class="main-footer">
 			<div class="container">
