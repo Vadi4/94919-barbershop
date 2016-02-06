@@ -75,7 +75,6 @@ h2 {
 		}
 
 	.index-content {
-		margin-bottom: 35px;
 		padding: 50px 80px;
 	}
 
@@ -90,9 +89,59 @@ h2 {
 			width: 300px;
 			min-height: 330px;
 		}
+		
+	.breadcrumbs {
+		margin-bottom: 60px;
+	}
+	
+	.product {
+		
+	}
+	
+		.product-gallery {
+			width: 460px;
+			float: left;
+			
+		}
+
+			.item-gallery-preview {
+				float: left;
+				margin-right: 20px;
+			}
+
+			.item-gallery-preview:last-child {
+				margin-right: 0px;
+			}
+
+		.product-description {
+			float: right;
+			width: 400px;
+		}
+		
+	.filter {
+		float: left;
+		width: 220px;
+	}	
+	
+	.selected-products {
+		float: right;
+		width: 700px;
+	}
+	
+		.container-selected-product {
+			width: 220px;
+			float: left;
+			min-height: 287px;
+			margin-right: 20px;
+		}
+
+		.container-selected-product:nth-child(3n) {
+			margin-right: 0px;
+		}
+
+		
 
 .main-footer {
-	margin-top: 65px;
 	padding-top: 60px;
 	padding-bottom: 40px;
 }
@@ -113,59 +162,8 @@ h2 {
 		width: 180px;
 	}
 
-//////* styles for barbershop-item.html */
 
-.breadcrumbs {
-	margin-bottom: 60px;
-}
-
-.product {
-	margin-bottom: 45px;
-}
-
-	.product-gallery {
-		width: 460px;
-		float: left;
-		
-	}
-
-		.item-gallery-preview {
-			display: block;
-			float: left;
-			margin-right: 20px;
-		}
-
-		.item-gallery-preview:last-child {
-			margin-right: 0px;
-		}
-
-	.product-description {
-		float: right;
-		width: 400px;
-	}
-
-/* Styles for barbershop-shop.html*/
-
-.filter {
-	float: left;
-	width: 220px;
-}
-
-.selected-products {
-	float: right;
-	width: 700px;
-}
-
-	.container-selected-product {
-		width: 220px;
-		float: left;
-		min-height: 287px;
-		margin-right: 20px;
-	}
-
-	.container-selected-product:nth-child(3n) {
-		margin-right: 0px;
-	}
+	
 
 .clearfix::after {
 	content: "";
