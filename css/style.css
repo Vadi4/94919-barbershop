@@ -32,62 +32,64 @@ h2 {
 	margin-bottom: 60px;
 }
 
-.container {
-	width: 940px;
-	margin: 0 auto;
-	padding: 0 10px;
-}
+	.container {
+		width: 940px;
+		margin: 0 auto;
+		padding: 0 10px;
+	}
 
-.main-nav {
-	min-height: 70px;
-	width: 780px;
-	float: left;
-}
+		.main-nav {
+			min-height: 70px;
+			width: 780px;
+			float: left;
+		}
 
-.user-block {
-	float: right;
-	width: 140px;
-	min-height: 70px;
+		.user-block {
+			float: right;
+			width: 140px;
+			min-height: 70px;
+		}
+		
+.main-content {
 }
+	.index-logo {
+		width: 368px;
+		height: 204px;
+		margin: 0 auto;
+		margin-bottom: 25px;
+	}
 
-.index-logo {
-	width: 368px;
-	height: 204px;
-	margin: 0 auto;
-	margin-bottom: 25px;
-}
+	.features {
+		margin-bottom: 80px;
+	}
 
-.features {
-	margin-bottom: 80px;
-}
+		.features-item {
+			float: left;
+			width: 300px;
+			margin-right: 20px;
+			min-height: 175px;
+		}
 
-.features-item {
-	float: left;
-	width: 300px;
-	margin-right: 20px;
-	min-height: 175px;
-}
+		.features-item:last-child {
+			margin-right: 0px;
+		}
 
-.features-item:last-child {
-	margin-right: 0px;
-}
+	.index-content {
+		margin-bottom: 35px;
+		padding: 50px 80px;
+	}
 
-.index-content {
-	margin-bottom: 35px;
-	padding: 50px 80px;
-}
+		.index-content-left {
+			float: left;
+			width: 380px;
+			min-height: 330px;
+		}
 
-.index-content-left {
-	float: left;
-	width: 380px;
-	min-height: 330px;
-}
-
-.index-content-right {
-	float: right;
-	width: 300px;
-	min-height: 330px;
-}
+		.index-content-right {
+			float: right;
+			width: 300px;
+			min-height: 330px;
+		}
 
 .main-footer {
 	margin-top: 65px;
@@ -95,21 +97,21 @@ h2 {
 	padding-bottom: 40px;
 }
 
-.footer-contacts {
-	float: left;
-	width: 320px;
-	margin-right: 60px;
-}
+	.footer-contacts {
+		float: left;
+		width: 320px;
+		margin-right: 60px;
+	}
 
-.footer-social {
-	float: left;
-	width: 180px;
-}
+	.footer-social {
+		float: left;
+		width: 180px;
+	}
 
-.footer-copyright {
-	float: right;
-	width: 180px;
-}
+	.footer-copyright {
+		float: right;
+		width: 180px;
+	}
 
 //////* styles for barbershop-item.html */
 
@@ -121,26 +123,26 @@ h2 {
 	margin-bottom: 45px;
 }
 
-.product-gallery {
-	width: 460px;
-	float: left;
-	
-}
+	.product-gallery {
+		width: 460px;
+		float: left;
+		
+	}
 
-.item-gallery-preview {
-	display: block;
-	float: left;
-	margin-right: 20px;
-}
+		.item-gallery-preview {
+			display: block;
+			float: left;
+			margin-right: 20px;
+		}
 
-.item-gallery-preview:last-child {
-	margin-right: 0px;
-}
+		.item-gallery-preview:last-child {
+			margin-right: 0px;
+		}
 
-.product-description {
-	float: right;
-	width: 400px;
-}
+	.product-description {
+		float: right;
+		width: 400px;
+	}
 
 /* Styles for barbershop-shop.html*/
 
@@ -154,16 +156,16 @@ h2 {
 	width: 700px;
 }
 
-.container-selected-product {
-	width: 220px;
-	float: left;
-	min-height: 287px;
-	margin-right: 20px;
-}
+	.container-selected-product {
+		width: 220px;
+		float: left;
+		min-height: 287px;
+		margin-right: 20px;
+	}
 
-.container-selected-product:nth-child(3n) {
-	margin-right: 0px;
-}
+	.container-selected-product:nth-child(3n) {
+		margin-right: 0px;
+	}
 
 .clearfix::after {
 	content: "";
