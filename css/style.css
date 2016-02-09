@@ -43,6 +43,12 @@ h2 {
 			width: 780px;
 			float: left;
 		}
+			
+			.main-nav ul{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
 
 		.user-block {
 			float: right;
@@ -76,6 +82,7 @@ h2 {
 
 	.index-content {
 		padding: 50px 80px;
+		margin-bottom: 34px;
 	}
 
 		.index-content-left {
@@ -83,6 +90,11 @@ h2 {
 			width: 380px;
 			min-height: 330px;
 		}
+			.news-preview {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
 
 		.index-content-right {
 			float: right;
@@ -93,6 +105,10 @@ h2 {
 	.breadcrumbs {
 		margin-bottom: 60px;
 	}
+		.breadcrumbs-list {
+			list-style: none;
+			padding: 0;
+		}
 	
 	.product {
 		
@@ -117,11 +133,23 @@ h2 {
 			float: right;
 			width: 400px;
 		}
+			
+			.set-of-product {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
 		
 	.filter {
 		float: left;
 		width: 220px;
 	}	
+	
+		.filters-list {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
 	
 	.selected-products {
 		float: right;
