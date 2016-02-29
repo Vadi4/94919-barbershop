@@ -16,13 +16,13 @@ body {
 	color: #000000;
 	font-family: "PT Sans Narrow", Arial, sans-serif; 
 	font-weight: bold;
-	background: #070707 url("../img/barbershop-bg.jpg") no-repeat center top;;
+	background: #070707 url("../img/barbershop-bg.jpg") no-repeat center top;
 	background-size: 1122px auto;
 	text-transform: uppercase;
 }
 
 .inner-page {
-	background: #f8f5f2;
+	background: #f8f3f0;
 }
 
 h1 {
@@ -36,6 +36,7 @@ h2 {
 .button {
 	height: 43px;
 	display: inline-block;
+	vertical-align: top;
 	text-decoration: none;
 	color: #fff;
 	line-height: 43px;
@@ -298,6 +299,22 @@ h2 {
 					text-decoration: none;
 					color: #000;
 					margin-right: 40px;
+					position: relative;
+				}
+				
+				.breadcrumbs-list-link a::before {
+					content: "";
+					position: absolute;
+					width: 8px;
+					height: 8px;
+					top: 5px;
+					right: -24px;
+					transform: rotate(45deg);
+					background: #000;
+				}
+				
+				.breadcrumbs-list-link:last-child a::before {
+					display: none;
 				}
 				
 				.breadcrumbs-list-link:last-child a {
@@ -337,7 +354,7 @@ h2 {
 			}
 
 			.item-gallery-preview:last-child {
-				margin-right: 0px;
+				margin-right: 0;
 			}
 
 		.product-description {
@@ -359,12 +376,66 @@ h2 {
 		.filters-list {
 			list-style: none;
 			padding: 0;
-			margin: 0 0 10px 0;
+			margin: 0 0 52px 0;
 		}
 		
 			.filters-list li {
 				margin-bottom: 13px;
 			}
+			
+				.filters-list-input {
+					display: none;
+				}
+				
+				.filters-list-label {
+					position: relative;
+					margin-left: 43px;
+					cursor: pointer;
+				}
+				
+				.filters-list-label::before {
+					content: "";
+					position: absolute;
+					width: 16px;
+					height: 16px;
+					top: 0;
+					left: -42px;
+					background: #f9f6f3;
+					border: 2px solid #000;
+				}
+			
+			.filters-groups-list li {
+				margin-bottom: 9px;
+			}	
+				
+				.filters-groups-input {
+					display: none;
+				}
+					
+				.filters-groups-input + label {
+					cursor: pointer;
+					display: inline-block;
+					vertical-align: top;
+					margin-left: 43px;
+					position: relative;
+				}	
+				
+				.filters-groups-input + label::before {
+					content: "";
+					position: absolute;
+					width: 16px;
+					height: 16px;
+					top: 2px;
+					border-radius: 50%;
+					left: -42px;
+					background: #f9f6f3;
+					border: 2px solid #000;
+					cursor: pointer;
+				}
+				
+		.btn-show {
+			padding: 0 30px;
+		}		
 	
 	.selected-products {
 		float: right;
@@ -376,11 +447,34 @@ h2 {
 			float: left;
 			min-height: 287px;
 			margin-right: 20px;
+			margin-bottom: 21px;
 		}
+		
+			.container-selected-product figure {
+				margin: 0;
+			}
 
 		.container-selected-product:nth-child(3n) {
 			margin-right: 0px;
 		}
+		
+			.selected-products-link {
+				text-decoration: none;
+				color: #000;
+			}
+			
+				.selected-products-link figcaption {
+					margin: 5px 0 1px 17px;
+				}	
+			
+				.caption-groups-of-products {
+					text-transform: none;
+					margin-bottom: -5px;
+				}
+				
+				.caption-manufacturer {
+					margin-bottom: 10px;
+				}
 
 		
 
