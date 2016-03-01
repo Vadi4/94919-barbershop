@@ -1,13 +1,8 @@
 html,
 body {
 	min-width: 1122px;
-	min-height: 1750px;
     margin: 0;
     padding: 0;
-}
-
-* {
-	outline: 1px solid red;
 }
 
 body {
@@ -31,6 +26,42 @@ h1 {
 
 h2 {
 	font-size: 24px;
+}
+
+.sprite {
+    background-image: url("../img/sprite.png");
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-checked {
+    width: 12px;
+    height: 12px;
+    background-position: -5px -5px;
+}
+
+.sprite-locked {
+    width: 15px;
+    height: 17px;
+    background-position: -5px -27px;
+}
+
+.sprite-login {
+    width: 18px;
+    height: 16px;
+    background-position: -5px -54px;
+}
+
+.sprite-radio-checked {
+    width: 8px;
+    height: 8px;
+    background-position: -5px -80px;
+}
+
+.sprite-user {
+    width: 15px;
+    height: 15px;
+    background-position: -5px -276px;
 }
 
 .button {
@@ -98,14 +129,37 @@ h2 {
 					.main-nav-list a:active {
 						background: #333;
 					}
+					
+					.current {
+						position: relative;
+						display: block;
+						font-size: 16px;
+						height: 72px;
+						line-height: 72px;
+						padding: 0 20px;
+						color: #fff;
+					} 
+					
+					.current::after {
+						content: "";
+						position: absolute;
+						
+						height: 5px;
+						bottom: 0;
+						left: 20px;
+						right: 20px;
+
+						background-color: #ffffff;
+					}
 
 		.user-block {
 			float: right;
 		}
 			
-			.user-block a {
+			.login {
 				text-decoration: none;
 				display: block;
+				position: relative;
 				font-size: 16px;
 				height: 72px;
 				line-height: 72px;
@@ -113,8 +167,24 @@ h2 {
 				color: #fff;
 			}
 			
-			.user-block a:hover,
-			.user-block a:active {
+			.login::before {
+				content: "";
+				position: absolute;
+				width: 18px;
+				height: 16px;
+				background: url("../img/login.png") no-repeat;
+				top: 39%;
+				left: 22%;
+				
+			}
+			
+			.login:hover::before,
+			.login:active::before {
+				opacity: 0.3;
+			}
+			
+			.login:hover,
+			.login:active {
 				background: #333;
 			}
 		
@@ -336,8 +406,12 @@ h2 {
 		.product-gallery {
 			width: 460px;
 			float: left;
-			
+			margin-bottom: 43px;
 		}
+		
+			.item-gallery-picture {
+				margin: 3px 0 15px 0;
+			}
 
 			.item-gallery-preview {
 				float: left;
@@ -359,7 +433,8 @@ h2 {
 
 		.product-description {
 			float: right;
-			width: 400px;
+			width: 383px;
+			padding: 10px;
 		}
 			
 			.set-of-product {
@@ -367,7 +442,57 @@ h2 {
 				padding: 0;
 				margin: 0;
 			}
-		
+			
+			.existence {
+				margin-top: 13px;
+			}
+				
+				.caption-vendor-code {
+					float: right;
+					color: #aeaeae;
+				}
+				
+			.product-description p {
+				line-height: 24px;
+				margin: 0;
+				padding: 0;
+				margin-top: 29px;
+			}
+			
+				.product-price-and-buy {
+					margin-top: 36px;
+					margin-bottom: 65px;
+				}
+				
+					.product-price-and-buy .price {
+						margin-left: 0;
+					}
+					
+					.product-price-and-buy  .button {
+						width: 78px;
+						text-align: center;
+					}
+					
+			.set-of-product {
+				margin-top: 30px;
+			}		
+				
+				.set-of-product li {
+					margin-left: 25px;
+					position: relative;
+				}
+				
+					.set-of-product li::before {
+						content: "";
+						position: absolute;
+						width: 8px;
+						height: 8px;
+						background: #000;
+						transform: rotate(45deg);
+						top: 8px;
+						left: -20px;
+					}
+				
 	.filter {
 		float: left;
 		width: 220px;
@@ -385,15 +510,16 @@ h2 {
 			
 				.filters-list-input {
 					display: none;
+					
 				}
 				
 				.filters-list-label {
-					position: relative;
 					margin-left: 43px;
+					position: relative;
 					cursor: pointer;
 				}
 				
-				.filters-list-label::before {
+				.filters-list-input + label::before {
 					content: "";
 					position: absolute;
 					width: 16px;
@@ -402,6 +528,16 @@ h2 {
 					left: -42px;
 					background: #f9f6f3;
 					border: 2px solid #000;
+				}
+				
+				.filters-list-input:checked + label::after {
+					content: "";
+					position: absolute;
+					top: 4px;
+					left: -38px;
+					width: 12px;
+					height: 12px;
+					background: url("../img/sprite.png") no-repeat -5px -5px;
 				}
 			
 			.filters-groups-list li {
@@ -433,6 +569,16 @@ h2 {
 					cursor: pointer;
 				}
 				
+				.filters-groups-input:checked + label::after {
+					content: "";
+					position: absolute;
+					top: 8px;
+					left: -36px;
+					width: 8px;
+					height: 8px;
+					background: url("../img/sprite.png") no-repeat -5px -80px;
+				}
+				
 		.btn-show {
 			padding: 0 30px;
 		}		
@@ -440,11 +586,14 @@ h2 {
 	.selected-products {
 		float: right;
 		width: 700px;
+		font-size: 0;
 	}
 	
 		.container-selected-product {
 			width: 220px;
-			float: left;
+			display: inline-block;
+			vertical-align: top;
+			background: #fff;
 			min-height: 287px;
 			margin-right: 20px;
 			margin-bottom: 21px;
@@ -457,25 +606,73 @@ h2 {
 		.container-selected-product:nth-child(3n) {
 			margin-right: 0px;
 		}
-		
+			
 			.selected-products-link {
-				text-decoration: none;
-				color: #000;
+				margin: 5px 0 1px 17px;
+				font-size: 14px;
+			}
+		
+			.caption-groups-of-products {
+				text-transform: none;
+				margin-top: -4px;
+				margin-bottom: -7px;
 			}
 			
-				.selected-products-link figcaption {
-					margin: 5px 0 1px 17px;
-				}	
+			.caption-manufacturer {
+				margin-top: 1px;
+				margin-bottom: 10px;
+			}
 			
-				.caption-groups-of-products {
-					text-transform: none;
-					margin-bottom: -5px;
+			.price-and-buy {
+				font-size: 14px;
+			}
+
+				.price {
+					height: 43px;
+					width: 109px;
+					line-height: 43px;
+					text-align: center;
+					background: #e5e5e5;
+					margin-left: 16px;
+					display: inline-block;
+					vertical-align: top;
 				}
 				
-				.caption-manufacturer {
-					margin-bottom: 10px;
+				.btn-buy {
+					width: 78px;
+					text-align: center;
 				}
+			
+	.pagination {
+		margin-top: 25px;
+		margin-bottom: 50px;
+	}		
+			
+		.pagination	a {
+			width: 43px;
+			height: 43px;
+			display:inline-block;
+			vertical-align: top;
+			text-decoration: none;
+			text-align: center;
+			line-height: 43px;
+			background: #000;
+			color: #fff;
+			margin-right: 7px;
+			font-size: 14px;
+		}
+		
+		.pagination .selected:hover,
+		.pagination .selected {
+			cursor: default;
+			background: #fff;
+			color: #000;
+		}
 
+		.pagination a:hover {
+			background: #663d15;
+		}
+		
 		
 
 .main-footer {
@@ -517,10 +714,57 @@ h2 {
 			height: 43px;
 			background: #000;
 			margin-right: 6px;
+			position: relative;
+		}
+		
+		.social-btn::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-image: url("../img/sprite.png");
+			background-repeat: no-repeat;
 		}
 		
 		.social-btn-vk {
 			margin-left: 20px;
+		}
+		
+		.social-btn-vk::before {
+			width: 25px;
+			height: 16px;
+			background-position: -5px -224px;
+		}
+		
+		.social-btn-fb:hover,
+		.social-btn-vk:hover,
+		.social-btn-inst:hover {
+			background: #fff;
+		}
+		
+		.social-btn-vk:hover::before {
+			background-position: -5px -250px;
+		}
+		
+		.social-btn-fb::before {
+			width: 12px;
+			height: 22px;
+			background-position: -5px -98px;
+		}
+		
+		.social-btn-fb:hover::before {
+			background-position: -5px -130px;
+		}
+		
+		.social-btn-inst::before {
+			width: 21px;
+			height: 21px;
+			background-position: -5px -162px;
+		}
+		
+		.social-btn-inst:hover::before {
+			 background-position: -5px -193px;
 		}
 
 	.footer-copyright {
