@@ -130,5 +130,25 @@
 				</div>
 			</div>
 		</footer>
+		<div class="modal-login">
+			<button class="modal-login-close" type="button">Закрыть</button>
+			<h2 class="modal-login-h2">Личный кабинет</h2>
+			<p>Введите пожалуйста свой логин и пароль.</p>
+			<form class="modal-login-form" action="https://echo.htmlacademy.ru" method="post"> 
+				<input class="input-user" type="text" name="login" placeholder="Логин">
+				<input class="input-password" type="password"  name="password" placeholder="Пароль">
+				<label class="login-checkbox">
+					<input type="checkbox" name="remember">
+					<span class="checkbox-indicator"></span>
+					Запомните меня
+				</label>
+				<a class="restore" href="#">Я забыл пароль!</a>
+				<button class="button modal-login-btn" type="submit">Войти</button>
+			</form>
+		</div>
+		<div class="content-map">
+				<button class="content-map-close">Закрыть</button>
+				<div id="yandex-map"></div>
+		</div>
 	</body>
 </html>

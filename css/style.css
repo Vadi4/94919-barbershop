@@ -17,7 +17,7 @@ body {
 }
 
 .inner-page {
-	background: #f8f3f0;
+	background: #f8f3f0 url("../img/bg_content-blog.png");
 }
 
 h1 {
@@ -222,6 +222,18 @@ h2 {
 				text-align: center;
 				font-size: 30px;
 				color: #fff;
+				position: relative;
+			}
+			
+			.features-name::after {
+				content: "";
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background: #fff;
+				left: 47%;
+				bottom: -45px;
+				transform: rotate(45deg);
 			}
 			
 			.features-item p {
@@ -237,7 +249,8 @@ h2 {
 	.index-content {
 		padding: 55px 82px 45px 82px;
 		margin-bottom: 34px;
-		background: #f8f5f2;
+		background: url("../img/vertical-line_content-blog.png") no-repeat center,
+					#f8f5f2 url("../img/bg_content-blog.png");
 	}
 
 		.index-content-left {
@@ -331,9 +344,10 @@ h2 {
 					margin: 0 17px 19px 0;
 					border: 2px solid #000;
 					line-height: 39px;
+					outline: none;
 				}
 				
-				.appointment-form input:hover {
+				.appointment-form input:focus {
 					border: 2px solid #663300;
 				}
 				
@@ -415,6 +429,10 @@ h2 {
 			float: left;
 			margin-bottom: 43px;
 		}
+		
+			.product-gallery img {
+				box-shadow: 0 0 7px 5px rgba(0, 0, 0, 0.1);
+			}
 		
 			.item-gallery-picture {
 				margin: 3px 0 15px 0;
@@ -604,6 +622,7 @@ h2 {
 			min-height: 287px;
 			margin-right: 20px;
 			margin-bottom: 21px;
+			box-shadow: 0 0 7px 5px rgba(0, 0, 0, 0.1);
 		}
 		
 			.container-selected-product figure {
@@ -826,7 +845,7 @@ h2 {
 .main-footer {
 	padding-top: 55px;
 	padding-bottom: 40px;
-	background: #222;
+	background: #222 url("../img/bg_footer.png");
 	color: #fff;
 }
 
@@ -937,6 +956,206 @@ h2 {
 				background: #fff;
 				color: #000;
 			}
+			
+	.modal-login {
+		width: 300px;
+		padding: 45px 80px;
+		color: #000;
+		background: #f8f5f2 url("../img/bg_content-blog.png");
+		position: absolute;
+		top: 120px;
+		left: 50%;
+		margin-left: -230px;
+		box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+		display: none;
+	}
+
+	.modal-login-close {
+		position: absolute;
+		top: 8px;
+		right: -31px;
+		width: 22px;
+		height: 22px;
+		background: none;
+
+		font-size: 0;
+
+		border: 0;
+		outline: 0;
+		cursor: pointer;
+	}	
+	
+		.modal-login-close::before,
+		.modal-login-close::after {
+			content: "";
+			position: absolute;
+
+			width: 21px;
+			height: 3px;
+			background-color: #d0d0d0;
+			border-radius: 1px;
+			
+			top: 10px;
+			left: 2px;
+		}
+		
+		.modal-login-close::before {
+			transform: rotate(45deg);
+		}
+
+		.modal-login-close::after {
+			transform: rotate(-45deg);
+		}
+		
+		.modal-login-h2 {
+			margin: 0;
+			margin-bottom: 16px;
+
+			font-size: 30px;
+			line-height: 42px;
+		}
+		
+		.modal-login p {
+			margin: 0;
+		}
+		
+		.modal-login-form {
+			margin: 10px 0 10px 0;
+		}
+		
+		.input-user,
+		.input-password {
+			line-height: 39px;
+			font-size: 14px;
+			height: 39px;
+			color: #000;
+			width: 236px;
+			margin: 0;
+			margin-bottom: 7px;
+			padding-left: 20px;
+			padding-right: 40px;
+			background-color: #f9f6f3;
+			border: 2px solid #000000;
+			outline: none;
+		}
+		
+		.input-user::-webkit-input-placeholder,
+		.input-password::-webkit-input-placeholder {
+			text-transform: uppercase;
+			color: #000;
+		}
+		
+		.input-password {
+			margin-bottom: 15px;
+		}
+		
+		.input-user:focus ,
+		.input-password:focus {
+			border-color: #663d15;
+		}
+		
+		.restore {
+			float: right;
+
+			color: #000000;
+		}
+		
+		.restore:hover {
+			color: #663d15;
+		}
+		
+		.modal-login-btn {
+			width: 100%;
+			margin-top: 15px;
+		}
+		
+			.login-checkbox {
+				position: relative;
+				padding-left: 30px;
+				cursor: pointer;
+			}
+			
+			.login-checkbox:hover {
+				color: #663d15;
+			}
+				
+				.login-checkbox input[type="checkbox"] {
+					display: none;
+				}
+				
+				.login-checkbox input[type="checkbox"] + .checkbox-indicator {
+					position: absolute;
+					top: -3px;
+					left: 0;
+
+					width: 16px;
+					height: 16px;
+
+					border: 2px solid #000000;
+				}
+				
+				.login-checkbox input[type="checkbox"]:checked + .checkbox-indicator::before {
+					content: "";
+					position: absolute;
+					width: 12px;
+					height: 12px;
+					top: 2px;
+					left: 2px;
+					background: url("../img/sprite.png") no-repeat -5px -5px;
+				}
+		
+		.content-map {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			margin-top: -280px;
+			margin-left: -390px;
+			
+			width: 766px;
+			height: 561px;
+
+			background: #e9e5dc url("../img/map.jpg");
+			border: 7px solid white;
+			box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+			display: none;
+		}
+		
+		.content-map-close {
+			position: absolute;
+			top: -10px;
+			right: -35px;
+			width: 22px;
+			height: 22px;
+			background: none;
+
+			font-size: 0;
+
+			border: 0;
+			outline: 0;
+			cursor: pointer;
+		}
+		
+		.content-map-close::before,
+		.content-map-close::after {
+			content: "";
+			position: absolute;
+
+			width: 21px;
+			height: 3px;
+			background-color: #cfcfcf;
+			border-radius: 1px;
+			
+			top: 10px;
+			left: 2px;
+		}
+		
+		.content-map-close::before {
+			transform: rotate(45deg);
+		}
+
+		.content-map-close::after {
+			transform: rotate(-45deg);
+		}
 		
 .clearfix::after {
 	content: "";
