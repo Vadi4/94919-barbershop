@@ -650,7 +650,7 @@ h2 {
 		}
 			
 			.selected-products-link {
-				margin: 5px 0 1px 17px;
+				margin: 5px 40px 1px 17px;
 				font-size: 14px;
 			}
 		
@@ -661,8 +661,14 @@ h2 {
 			}
 			
 			.caption-manufacturer {
-				margin-top: 1px;
+				padding-top: 1px;
 				margin-bottom: 10px;
+			}
+			
+			.caption-groups-of-products a,
+			.caption-manufacturer a {
+				text-decoration: none;
+				color: #000;
 			}
 			
 			.price-and-buy {
@@ -678,6 +684,7 @@ h2 {
 					margin-left: 16px;
 					display: inline-block;
 					vertical-align: top;
+					margin-right: -3px;
 				}
 				
 				.btn-buy {
@@ -1184,6 +1191,10 @@ h2 {
 
 		.content-map-close::after {
 			transform: rotate(-45deg);
+		}
+		
+		.content-map iframe {
+			border: 0;
 		}
 		
 @keyframes bounce {
