@@ -544,6 +544,22 @@ h2 {
 					cursor: pointer;
 				}
 				
+				.filters-groups-list label:hover,
+				.filters-list-label:hover {
+					color: #663d15;
+				}
+				
+				input:disabled + label ,
+				input:disabled + label:hover {
+					color: #adaba9;
+					cursor: default;
+				}
+				
+				input:disabled + label::before,
+				input:disabled + label::after {
+					opacity: 0.3;
+				}
+				
 				.filters-list-input + label::before {
 					content: "";
 					position: absolute;
@@ -968,6 +984,10 @@ h2 {
 		margin-left: -230px;
 		box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
 		display: none;
+	}
+	
+	.modal-login-show {
+		display: block;
 	}
 
 	.modal-login-close {
