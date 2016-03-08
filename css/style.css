@@ -986,9 +986,10 @@ h2 {
 			}
 			
 	.modal-login {
-		position: absolute;
+		position: fixed;
 		top: 120px;
 		left: 50%;
+		z-index: 3;
 		display: none;
 		margin-left: -230px;
 		padding: 45px 80px;

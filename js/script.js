@@ -6,10 +6,6 @@ var password = popup.querySelector(".input-password");
 var form = popup.querySelector(".modal-login-form");
 var storageLogin = localStorage.getItem("login");
 
-var openMap = document.querySelector(".btn-driveway");
-var popupMap = document.querySelector(".content-map");
-var closeMap = popupMap.querySelector(".content-map-close");
-
 	link.addEventListener("click", function(event) {
 		event.preventDefault();
 		popup.classList.add("modal-login-show");
@@ -49,22 +45,28 @@ var closeMap = popupMap.querySelector(".content-map-close");
 		}
 	});
 	
-	openMap.addEventListener("click", function(event) {
-		event.preventDefault();
-		popupMap.classList.add("content-map-show");
-	});
-	
-	closeMap.addEventListener("click", function(event) {
-		event.preventDefault();
-		popupMap.classList.remove("content-map-show");
-	});
-	
-	window.addEventListener("keydown", function(event) {
-		if (event.keyCode === 27 ) {
-			if(popupMap.classList.contains("content-map-show")) {
-				popupMap.classList.remove("content-map-show");
-			}
-		}
-	});
 
-console.log(openMap);  
+if(document.querySelector(".content-map")) {
+	var openMap = document.querySelector(".btn-driveway");
+	var popupMap = document.querySelector(".content-map");
+	var closeMap = popupMap.querySelector(".content-map-close");	
+		
+		
+		openMap.addEventListener("click", function(event) {
+			event.preventDefault();
+			popupMap.classList.add("content-map-show");
+		});
+		
+		closeMap.addEventListener("click", function(event) {
+			event.preventDefault();
+			popupMap.classList.remove("content-map-show");
+		});
+		
+		window.addEventListener("keydown", function(event) {
+			if (event.keyCode === 27 ) {
+				if(popupMap.classList.contains("content-map-show")) {
+					popupMap.classList.remove("content-map-show");
+				}
+			}
+		});
+}
